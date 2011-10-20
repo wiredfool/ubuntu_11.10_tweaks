@@ -1,0 +1,9 @@
+pm/rtl8191
+
+I've got an IOGear a/b/n wireless usb adapter that uses the Realtek
+RTL8191s chipset. Works out of the box with the 3.0.0-12 kernel, but
+does not respond after a resume from suspend or hibernate.
+
+This script goes in the /etc/pm/sleep directory. It unloads and
+reloads the appropriate kernel module to make the network come online
+again.

@@ -1,0 +1,7 @@
+unity
+
+Unity has issues. I'm building a system for the kids, trying to reduce
+the complexity that they see. They're untrusted users, so they don't
+get to install applications. The default application lens includes
+downloadable applications. This is a (very small) patch to get rid of
+that.
