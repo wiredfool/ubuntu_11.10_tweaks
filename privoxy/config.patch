@@ -1,0 +1,53 @@
+*** /etc/privoxy/config~	2011-03-22 04:22:02.000000000 -0700
+--- /etc/privoxy/config	2011-10-13 19:04:31.404721407 -0700
+***************
+*** 519,525 ****
+  #      Possible applications include limiting Internet access for
+  #      children.
+  #
+! #trustfile trust
+  #
+  #
+  #  3. DEBUGGING
+--- 519,525 ----
+  #      Possible applications include limiting Internet access for
+  #      children.
+  #
+! trustfile trust
+  #
+  #
+  #  3. DEBUGGING
+***************
+*** 935,941 ****
+  #
+  #      enforce-blocks 1
+  #
+! enforce-blocks 0
+  #
+  #
+  #  4.7. ACLs: permit-access and deny-access
+--- 935,941 ----
+  #
+  #      enforce-blocks 1
+  #
+! enforce-blocks 1
+  #
+  #
+  #  4.7. ACLs: permit-access and deny-access
+***************
+*** 1363,1369 ****
+  #
+  #      accept-intercepted-requests 1
+  #
+! accept-intercepted-requests 0
+  #
+  #
+  #  6.2. allow-cgi-request-crunching
+--- 1363,1369 ----
+  #
+  #      accept-intercepted-requests 1
+  #
+! accept-intercepted-requests 1
+  #
+  #
+  #  6.2. allow-cgi-request-crunching

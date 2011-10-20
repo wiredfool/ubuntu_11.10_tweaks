@@ -1,0 +1,15 @@
+#! /bin/sh
+#/etc/pm/sleep.d/rtl8191
+# This script unloads and reloads the r8712u driver on wake from hibernate.  
+
+
+case $1 in
+     suspend|suspend_hybrid|hibernate)
+        ;;
+     resume|thaw)
+	# No need to do anything here, kernel unsuspends USB devices
+	logger  "unloading and reloading r8712u module"
+	modprobe -q -r r8712u && modprobe r8712u
+	:
+        ;;
+esac

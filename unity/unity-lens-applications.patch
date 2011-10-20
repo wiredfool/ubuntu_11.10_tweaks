@@ -1,0 +1,19 @@
+*** unity-lens-applications-0.4.12/src/daemon.vala	2011-10-06 04:45:48.000000000 -0700
+--- unity-lens-applications-0.4.12-mod/src/daemon.vala	2011-10-15 21:44:18.000000000 -0700
+***************
+*** 74,80 ****
+        log = new Zeitgeist.Log();
+        zg_index = new Zeitgeist.Index();
+        
+!       pkgsearcher = new Unity.Package.Searcher ();
+        if (pkgsearcher == null)
+          {
+            critical ("Failed to load Software Center index. 'Apps Available for Download' will not be listed");
+--- 74,80 ----
+        log = new Zeitgeist.Log();
+        zg_index = new Zeitgeist.Index();
+        
+!       pkgsearcher = null; /*new Unity.Package.Searcher ();*/
+        if (pkgsearcher == null)
+          {
+            critical ("Failed to load Software Center index. 'Apps Available for Download' will not be listed");

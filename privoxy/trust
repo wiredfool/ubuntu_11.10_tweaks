@@ -1,0 +1,140 @@
+######################################################################
+#
+#  File        :  Source: /cvsroot/ijbswa/current/trust,v
+#
+#  Id: trust,v
+#
+#  Purpose     :  Trustfiles are an experimental feature and can be used
+#                 to build "whitelists" (versus the usual "blacklists"
+#                 techniques).
+#
+#  Copyright   :  Written by and Copyright
+#                 Privoxy team. http://www.privoxy.org/
+#
+#                 Based on the Internet Junkbuster originally written
+#                 by and Copyright (C) 1997 Anonymous Coders and
+#                 Junkbusters Corporation.  http://www.junkbusters.com
+#
+# We value your feedback. However, to provide you with the best support,
+# please note:
+#
+#  * Use the support forum to get help:
+#    http://sourceforge.net/tracker/?group_id=11118&atid=211118
+#  * Submit bugs only thru our bug forum:
+#    http://sourceforge.net/tracker/?group_id=11118&atid=111118
+#    Make sure that the bug has not already been submitted. Please try
+#    to verify that it is a Privoxy bug, and not a browser or site
+#    bug first. If you are using your own custom configuration, please
+#    try the stock configs to see if the problem is a configuration
+#    related bug. And if not using the latest development snapshot,
+#    please try the latest one. Or even better, CVS sources.
+#  * Submit feature requests only thru our feature request tracker:
+#    http://sourceforge.net/tracker/?atid=361118&group_id=11118&func=browse
+#
+# For any other issues, feel free to use the mailing lists:
+# http://sourceforge.net/mail/?group_id=11118
+#
+# Anyone interested in actively participating in development and related
+# discussions can join the appropriate mailing list here:
+# http://sourceforge.net/mail/?group_id=11118. Archives are available
+# here too.
+#
+######################################################################
+#
+#                      Sample Trustfile for Privoxy
+
+# For this file to have any effect, the line in the main config file beginning
+# with "trustfile" must be uncommented, with the name of this file following the
+# word "trustfile".
+
+# Trustfiles are an experimental feature used for building "whitelists"
+# of "trusted" sites (versus the usual "blacklists" technique). For more
+# detail, see http://www.privoxy.org/user-manual/config.html#TRUSTFILE.
+
+# List trusted domains here. The default is to block any URL that is NOT
+# referenced. Access to trusted domains includes all paths within that
+# domain.
+
+# Preceding a domain with a '+' character will designate that domain
+# as a "trusted referrer", meaning any requests whose HTTP "Referer" headers
+# contain an URL from that domain will be allowed, and the previously untrusted
+# host will be dynamically added to this file. Thus, this builds a "white-list"
+# of hosts the user is allowed to visit.
+
+# Note this means that the file will grow with use!
+
+# Also note that you can only trust referrers if you control the user's
+# system and make sure that there are no programs available that allow
+# to set arbitrary headers.
+
+# Preceding the domain with '~' character allows access to that domain only
+# (including all paths within that domain), but does not allow access to links
+# to other, outside domains. Sites that are added dynamically by trusted
+# referrers will include the '~' character, and thus do not become trusted
+# referrers themselves.
+
+# Example: to allow example.com and to white-list domains that appear to
+# be reached through links from example.com, uncomment this line:
+
+# +example.com
+
+# The next two lines make sure that the user can access Privoxy's
+# CGI pages, without automatically trusting their links.
+
+~config.privoxy.org
+~p.p
+
++.lego.com
+~.poissonrouge.com
+~www.uri.org/kids
++nces.ed.gov
+~.abcya.com
+~.eduplace.com
+~.historyforkids.org
+~.apples4theteacher.com
+~maps.google.com
+~.mypuzzle.org
+~.sciplus.com
+~bbc.co.uk/typing
+~.funbrain.com
+~.webrangers.us
+~89.16.161.170/games2
+~.firemansam.co.uk
+~.thomasandfriends.com
+~.bobthebuilder.com
+~.firemansamonline.com
+~.starfall.com
+~.fisher-price.com
+~search.usa.gov
+~.nps.gov
+~.legocafe.com
+
+#existing safari bookmarks
+#<A HREF="http://www.poissonrouge.com/">www.poissonrouge.com</A>
+#<A HREF="http://www.uri.org/kids">Religions</A>
+#<A HREF="http://nces.ed.gov/nceskids/createagraph">createagraph</A>
+#<A HREF="http://abcya.com/">abcya.com</A>
+#<A HREF="http://www.eduplace.com/tales/">eduplace-tales</A>
+#<A HREF="http://www.historyforkids.org/learn/egypt/architecture/pyramids.htm">pyramids.htm</A>
+#<A HREF="http://www.apples4theteacher.com/math.html">math.html</A>
+#<A HREF="http://www.oddcast.com/home/demos/tts/frameset.php?frame1=talk">speech</A>
+#<A HREF="http://www.lego.com/">www.lego.com</A>
+#<A HREF="http://maps.google.com/">maps.google.com</A>
+#<A HREF="http://www.mypuzzle.org/">www.mypuzzle.org</A>
+#<A HREF="http://www.sciplus.com/">www.sciplus.com</A>
+#<A HREF="http://bbc.co.uk/typing">typing</A>
+#<A HREF="http://www.funbrain.com/">www.funbrain.com</A>
+#<A HREF="http://www.webrangers.us/index.cfm">WebRangers</A>
+#<A HREF="http://89.16.161.170/games2/?lang=en&game=splash">fires in windows</A>
+#<A HREF="http://www.firemansam.co.uk/games/webgame-container/game-container.php?module=sam-vehicles&theme=sam-theme&lang=en&width=500&height=375">Fireman Games</A>
+#<A HREF="http://www.thomasandfriends.com/usa/games.asp">Thomas the Tank Engine</A>
+#<A HREF="http://www.bobthebuilder.com/">bobthebuilder</A>
+#<A HREF="http://www.firemansamonline.com/">Fireman Sam</A>
+#<A HREF="http://www.starfall.com/">www.starfall.com</A>
+#<A HREF="http://www.thomasandfriends.com/usa/online_activities_for_the_children_with_thomas_the_tank_engine_and_friends.htm">Thomas</A>
+#<A HREF="http://www.fisher-price.com/us/fun/games/abczoo/default.asp">ABC's Zoo</A>
+#<A HREF="http://www.fisher-price.com/fp.aspx?st=2601&e=gamesByAge&mcat=game_toddler&site=us">FPGames</A>
+#<A HREF="http://search.usa.gov/">search</A>
+#<A HREF="http://nps.gov/">national park service</A>
+
+~.legospace.com

@@ -1,0 +1,6 @@
+#!/bin/sh
+# /etc/network/if-up.d/iptables
+
+if [ -f /etc/default/iptables-default ]; then 
+   /sbin/iptables-restore < /etc/default/iptables-default
+fi

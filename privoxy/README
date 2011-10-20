@@ -1,0 +1,28 @@
+Privoxy
+
+This is a whitelist based web filtering setup for kids browsing
+purposes. Their Firefox instances are setup to use it as a proxy, as
+well as there being a UID based firewall rule as a backup. Trusted
+users are allowed full access to the web.
+
+trust
+
+These are the trusted sites that are whitelisted in the proxy, to go
+in /etc/privoxy/trust
+
+config.patch
+
+These are the settings to apply to the /etc/privoxy/config file to
+configure it for whitelist, not allow bypassing the proxy, and setting
+privoxy to allow transparent proxying.
+
+iptables-default
+
+An iptables setup that trusts users 0-500, and a couple of named
+users. All others wanting to use ports 80 or 443 need to go through
+privoxy. Goes in /etc/default/.
+
+iptables 
+
+A script to restore the iptables settings when an interface comes
+up. Place in /etc/network/if-up.d

@@ -1,0 +1,38 @@
+This is a collection of small tweaks to make Ubuntu 11.10 work better
+for my purposes.
+
+pm/rtl8191
+
+I've got an IOGear a/b/n wireless usb adapter that uses the Realtek
+RTL8191s chipset. Works out of the box with the 3.0.0-12 kernel, but
+does not respond after a resume from suspend or hibernate.
+
+This script goes in the /etc/pm/sleep directory. It unloads and
+reloads the appropriate kernel module to make the network come online
+again.
+
+unity
+
+Unity has issues. I'm building a system for the kids, trying to reduce
+the complexity that they see. They're untrusted users, so they don't
+get to install applications. The default application lens includes
+downloadable applications. This is a (very small) patch to get rid of
+that.
+
+More to come, if I figure out a couple more things. 
+
+Grub 
+
+This is installed on a foxconn mini itx atom motherboard with intel
+i915 video which apparently has a phantom lvds display connected. If
+the video kernel option is not added, then the default resolution on
+the large external LCD is always mirrored 1024x768 of the virtual
+panel. The settings are for /etc/default/grub.
+
+Privoxy
+
+This is a whitelist based web filtering setup for kids browsing
+purposes. Their Firefox instances are setup to use it as a proxy, as
+well as there being a UID based firewall rule as a backup. Trusted
+users are allowed full access to the web.
+
